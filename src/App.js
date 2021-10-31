@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { incrementar, reduzir } from './store/contador';
+import { incrementar, reduzir, somar } from './store/contador';
 import { login } from './store/login';
 import { abrir, fechar } from './store/modal';
 
@@ -28,6 +28,9 @@ function App() {
       <div>
         <button onClick={() => dispatch(incrementar())}>Incrementar</button>
         <button onClick={() => dispatch(reduzir())}>Reduzir</button>
+        <button onClick={() => dispatch(somar(5))}>
+          Somar (usando 'prepare')
+        </button>
       </div>
 
       <form action='' onSubmit={handleSubmit}>
